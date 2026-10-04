@@ -3,36 +3,66 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#eef4fb">
+    <meta name="theme-color" content="#080b13">
     <meta name="description" content="Explore NSUT societies and apply to join a team.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NSUT Society Recruitment">
+    <meta property="og:description" content="Explore NSUT societies, find your community, and apply for a role.">
+    <meta property="og:image" content="assets/nsut_logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NSUT Society Recruitment">
+    <meta name="twitter:description" content="Explore NSUT societies, find your community, and apply for a role.">
+    <meta name="twitter:image" content="assets/nsut_logo.png">
     <title>NSUT Society Recruitment</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
     <script src="societies.js" defer></script>
     <script src="app.js" defer></script>
   </head>
-  <body>
+  <body data-application-endpoint="">
+    <a class="skip-link" href="#app">Skip to content</a>
     <header class="topbar">
       <a class="wordmark" href="#home" aria-label="NSUT Society Recruitment home">
         <img class="nsut-logo" src="assets/nsut_logo.png" alt="NSUT logo">
         <span>NSUT <span class="wordmark-subtitle">Society Recruitment</span></span>
       </a>
       <nav class="topnav" aria-label="Main navigation">
-        <a class="topnav-link is-current" href="#home">Home</a>
-        <a class="topnav-link" href="#societies">Societies</a>
-        <a class="topnav-link" href="#how-it-works">About</a>
+        <a class="topnav-link is-current" data-nav="home" href="#home">Home</a>
+        <a class="topnav-link" data-nav="societies" href="#societies">Societies</a>
+        <a class="topnav-link" data-nav="about" href="#how-it-works">About</a>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </button>
     </header>
+
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="logo-coding-club" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 19h30v27H17zM17 25h30M23 34l6 5-6 5m12 0h7"/><circle cx="22" cy="22" r=".8" fill="currentColor"/><circle cx="27" cy="22" r=".8" fill="currentColor"/></symbol>
+      <symbol id="logo-fine-arts-society" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M32 12v8m0 24v8M12 32h8m24 0h8M18 18l6 6m16 16 6 6m0-28-6 6M24 40l-6 6"/><circle cx="32" cy="32" r="11"/><circle cx="32" cy="32" r="3" fill="currentColor"/></symbol>
+      <symbol id="logo-sports-committee" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M19 14c7 8 10 17 9 27-1 5-3 9-7 13m24-40c-7 8-10 17-9 27 1 5 3 9 7 13M11 27c8 4 20 5 32 1 4-1 7-3 10-6M12 39c9-4 19-5 29-2 5 1 9 3 12 6"/></symbol>
+      <symbol id="logo-writing-publishing-society" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17c8-3 15-1 20 4 5-5 12-7 20-4v31c-8-3-15-1-20 4-5-5-12-7-20-4V17Zm20 4v31M18 25c4-1 7 0 10 2m-10 5c4-1 7 0 10 2m18-9c-4-1-7 0-10 2m10 5c-4-1-7 0-10 2"/></symbol>
+      <symbol id="logo-cultural-society" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M32 11v13m0 16v13M11 32h13m16 0h13M17 17l9 9m12 12 9 9m0-30-9 9M26 38l-9 9"/><circle cx="32" cy="32" r="9"/><circle cx="32" cy="32" r="2.5" fill="currentColor"/></symbol>
+      <symbol id="logo-music-and-dance-society" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c10 0 14 20 24 20s13-20 19-20M12 32c10 0 14 20 24 20s13-20 19-20M12 12c10 0 14 20 24 20s13-20 19-20"/><path d="M24 15v20m0-20 13-4v19"/><circle cx="21" cy="37" r="4" fill="currentColor"/><circle cx="34" cy="34" r="4" fill="currentColor"/></symbol>
+      <symbol id="logo-electronics-society" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="17" y="17" width="30" height="30" rx="4"/><circle cx="32" cy="32" r="7"/><path d="M25 17V9m14 8V9M25 55v-8m14 8v-8M17 25H9m8 14H9m46-14h-8m8 14h-8M32 25v-9m0 32v-9m-7-7h-9m32 0h-9"/><circle cx="32" cy="32" r="2" fill="currentColor"/></symbol>
+      <symbol id="logo-literary-society" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 42c9-1 15 1 19 6 4-5 10-7 19-6V19c-8-2-14 0-19 5-5-5-11-7-19-5v23Zm19-18v24"/><path d="M38 14 50 9l-4 13-10 10-5-5 7-13Z"/><path d="m38 14 8 8m-8-8 7-2"/></symbol>
+    </svg>
 
     <main id="app" tabindex="-1"></main>
 
+    <nav class="mobile-action-bar" data-mobile-action-bar aria-label="Quick actions" hidden>
+      <a class="mobile-action-secondary" data-mobile-secondary href="#societies">Societies</a>
+      <a class="mobile-action-primary" data-mobile-primary href="#find">Find my society</a>
+      <button class="mobile-action-submit" data-mobile-submit form="application-form" type="submit" hidden>Send application <span aria-hidden="true">↗</span></button>
+    </nav>
+
     <footer class="site-footer">
       <a class="wordmark footer-mark" href="#home"><img class="nsut-logo" src="assets/nsut_logo.png" alt=""><span>NSUT Society Recruitment</span></a>
-      <p>Join a society. Find your place on campus.</p>
+      <p>Student project, not the official NSUT portal.</p>
       <span class="footer-year">Netaji Subhas University of Technology</span>
     </footer>
-    <div class="toast" role="status" aria-live="polite"></div>
+    <noscript><div class="noscript-message">JavaScript is required to browse societies and submit applications.</div></noscript>
   </body>
 </html>
